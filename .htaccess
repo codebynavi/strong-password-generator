@@ -1,0 +1,24 @@
+# Get whichever line applies to the error code you want to use. Make sure to replace the .html file on the right
+# with the real filename you want to be your error page
+
+
+# ErrorDocument 500 /500.html
+# ErrorDocument 400 /400.html
+ErrorDocument 401 "HTTP 401: Access Denied"
+ErrorDocument 403 "HTTP 403: Forbidden"
+ErrorDocument 404 /404.html
+
+
+
+Options +FollowSymLinks -MultiViews
+# Turn mod_rewrite on
+RewriteEngine On
+RewriteBase /
+
+# For LocalHost !.html
+RewriteCond %{HTTP_HOST} !=localhost
+RewriteCond %{HTTP_HOST} !=127.0.0.1
+RewriteCond %{REMOTE_ADDR} !=127.0.0.1
+RewriteCond %{REMOTE_ADDR} !=::1
+
+

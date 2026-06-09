@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <title>StrongPass - Strong Password Generator</title>
+  <meta name="description"
+    content="Create secure passwords with ease! Our generator tool creates randomized, difficult-to-guess passwords, enhancing online security. Try it now!" />
+  <meta name="keywords"
+    content="strong password generator, secure passwords, randomized passwords, online security, password strength, password complexity, password protection, password safety, password management." />
+  <meta name="application-name" content="StrongPass - Strong Password Generator">
+  <meta name="author" content="Naveen Gupta">
+  <meta property="og:title" content="StrongPass - Strong Password Generator">
+  <meta property="og:site_name" content="StrongPass - Strong Password Generator" />
+  <meta property="og:description"
+    content="Create secure passwords with ease! Our generator tool creates randomized, difficult-to-guess passwords, enhancing online security. Try it now!" />
+  <meta property="og:image" content="https://strongpass.techspecsmart.com/images/strongpass-banner.jpg" />
+  <meta property="og:image:secure_url" content="https://strongpass.techspecsmart.com/images/strongpass-banner.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://strongpass.techspecsmart.com" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y90JSHEJT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0Y90JSHEJT');
+  </script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container">
+      <a href="/"><img width="190" src="/images/strongpass-logo-light.png" alt="StrongPass Logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item me-3">
+            <a class="nav-link active" href="/">Home</a>
+          </li>
+          <li class="nav-item dropdown me-3">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tools
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="https://textcases.techspecsmart.com/" target="_blank">TextCases
+                  Converter</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://waopener.techspecsmart.com/" target="_blank">WhatsApp Chat
+                  Opener</a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="https://www.techspecsmart.com/" target="_blank">Blog</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="/privacy-policy.html" target="_blank">Privacy Policy</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- hero section start  -->
+  <section class="hero-area">
+
+    <div class="text-center my-5">
+      <h1 class='mb-3 hero-text'>Strong Password Generater</h1>
+      <p class="mx-3">Secure your digital world with our strong password generator.</p>
+    </div>
+
+    <div class="container">
+
+      <div class="row text-center">
+        <div class="col-md-2 d-md-block d-none ">
+          <!-- Advertisement -->
+        </div>
+
+        <div class="col-md-8">
+          <div class="main-box mb-4 rounded p-5">
+            <div class="row align-items-center justify-content-center flex-nowrap">
+              <div class="col-10 ps-0 col-md-8 position-relative">
+
+                <input type="text" class="gen-pass rounded" name='password' id='password' />
+                <span id="generate-password" title="Generate Password"><i class=" pass-ref fi fi-rr-refresh"></i></span>
+
+              </div>
+              <div class="col-2 col-md-2 p-0 text-start">
+                <span class="copy-btn rounded" id="copy-password" title="Copy Password"><i
+                    class="copy-btn-icon fi fi-rr-copy"></i></span>
+
+              </div>
+
+            </div>
+            <div class="row align-items-center justify-content-center">
+              <div class="col-md-8 p-0">
+                <div class="row my-4 align-items-center">
+                  <div class="col-7 col-md-4 text-start">
+                    <span class='my-3 fw-semibold'>Pasword Length :</span>
+                  </div>
+                  <div class="col-5 col-md-2 text-start">
+                    <input type="number" class="w-100 p-length rounded" id="passlength" value="12">
+                  </div>
+
+                </div>
+
+                <input type="range" class="form-range w-100" min="1" max="50" id="range-input" value="12"></input>
+
+                <div class="row mt-3">
+                  <div class="col-md-6  my-2 text-start">
+                    <div class="form-check form-switch">
+                      <label class="form-check-label">lowercase</label>
+                      <input class="form-check-input" type="checkbox" id="lowercase" checked />
+
+                    </div>
+                  </div>
+                  <div class="col-md-6  my-2 text-start">
+                    <div class="form-check form-switch">
+                      <label class="form-check-label">UPPERCASE</label>
+                      <input class="form-check-input" type="checkbox" id="uppercase" checked />
+
+                    </div>
+                  </div>
+                  <div class="col-md-6  my-2 text-start">
+                    <div class="form-check form-switch">
+                      <label class="form-check-label">Number</label>
+                      <input class="form-check-input" type="checkbox" id="numbers" checked />
+
+                    </div>
+                  </div>
+                  <div class="col-md-6  my-2 text-start">
+                    <div class="form-check form-switch">
+                      <label class="form-check-label">Symbol</label>
+                      <input class="form-check-input" type="checkbox" id="symbols" checked />
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-2 col-md-2 p-0 ">
+                <!-- <span class="copy-btn rounded"><i class=" fi fi-rr-copy"></i></span> -->
+
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div class="col-md-2 d-md-block d-none ">
+          <!-- Advertisement -->
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="my-5 col-md-8 m-auto text-center">
+        <h2 class="text-center hero-text mb-3">Generated QR Code for your Password</h2>
+        <p class="mx-3">"Scan this QR code with your device's camera to instantly recognize the encoded password. You
+          can Download this QR code for future use."</p>
+      </div>
+      <div id="qr"></div>
+      <div class="text-center my-4">
+        <a href="" class="btn-qr" id="downloadQR" download="StrongPass-QR-Code.png" disabled>Download QR Code</a>
+      </div>
+    </div>
+
+
+  </section>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#DAF0FF" fill-opacity="1"
+      d="M0,64L30,85.3C60,107,120,149,180,149.3C240,149,300,107,360,112C420,117,480,171,540,165.3C600,160,660,96,720,58.7C780,21,840,11,900,53.3C960,96,1020,192,1080,197.3C1140,203,1200,117,1260,90.7C1320,64,1380,96,1410,112L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z">
+    </path>
+  </svg>
+
+  <section class="container">
+    <div class="row">
+      <div class="col-10 m-auto">
+        <h2 class="text-center hero-text mb-5">Advantages of this Tool</h2>
+        <div class="row">
+          <div class="col-md-4 my-card">
+            <div class="card p-4  my-4">
+              <span class="card-img"><i class="fi fi-rr-puzzle-alt"></i></span>
+              <p class="fw-bold text-center my-4">Customization Options</p>
+              <p class="card-paragraph">This tool has customization features that allow users to build passwords that
+                are personal to them. This can include password length, the use of numbers or special characters, and
+                the ability to exclude specific characters or phrases.</p>
+            </div>
+          </div>
+          <div class="col-md-4 my-card">
+            <div class="card p-4  my-4">
+              <span class="card-img"><i class="fi fi-rr-shield-check"></i></span>
+              <p class=" fw-bold text-center my-4">Strong & Secure Passwords</p>
+              <p class="card-paragraph">This tool generates strong, secure passwords that are difficult to crack. This
+                implies that users may be confident that their online accounts are secure against hacking attempts and
+                unauthorised access.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 my-card">
+            <div class="card p-4  my-4">
+              <span class="card-img"><i class="fi fi-rr-badge-dollar"></i></span>
+              <p class="fw-bold text-center my-4">Free To Use</p>
+              <p class="card-paragraph">Our Strong password generation Tool is absolutely free to use, with no hidden
+                fees or penalties. Users can generate as many strong passwords as they need for free.
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card p-4 my-4">
+          <p class="card-paragraph"><b>Note: </b>Our password generator tool generates strong, randomized passwords on
+            the client side
+            only. We
+            do not store or transmit any passwords, ensuring that all generated passwords are secure and
+            private.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- footer  -->
+  <div class="container footer-credit">
+    <hr />
+    <div class="mb-3 text-center">
+      <small>&#169; <span id="fyear"></span> by <span class='fw-semibold'>StrongPass</span> | Created by <a
+          href="https://www.techspecsmart.com">
+          <span class='fw-semibold'>Naveen Gupta</span></a></small>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+    crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+</body>
+
+</html>

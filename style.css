@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+h1, h2, h3 {
+    margin: 15px 0px !important;
+}
+ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+.footer-credit {
+    margin-top: auto !important;
+}
+
+.hero-area {
+    background-color: #daf0ff;
+    min-height: 50vh;
+}
+
+.hero-text {
+    font-weight: 800;
+    color: #0067b1;
+}
+
+.btn-qr {
+    background-color: rgb(0, 103, 177);
+    color: rgb(255, 255, 255);
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    font-size: 18px;
+}
+
+.btn-qr:hover {
+    background-color: #138de4;
+    color: #fff;
+}
+
+.p-length {
+    padding: 5px 5px 5px 12px;
+    outline: none;
+    border: none;
+    text-align: center;
+}
+
+.main-box {
+    background-color: #a5d9ff;
+}
+
+.copy-btn {
+    background-color: #d1ecff;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+}
+
+
+.gen-pass {
+    padding: 15px 40px 15px 20px;
+    border: none;
+    width: 100%;
+    text-align: center;
+}
+
+
+.pass-ref {
+
+    position: absolute;
+    font-size: 20px;
+    padding: 12px 20px;
+    cursor: pointer;
+    right: 10px;
+    top: 5px;
+    line-height: 1;
+}
+
+.gen-pass:focus {
+    border: none;
+    outline: none;
+}
+
+.rotate-360 {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transition: transform .3s ease-in-out;
+    /* add transition effect */
+}
+
+#qr {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    outline: 12px solid #fff;
+}
+
+.card-img {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #0067b1;
+}
+
+.my-card > .card {
+    border: none;
+}
+
+.card-paragraph {
+    text-align: justify;
+    font-size: 16px;
+}
+
+@media (min-width: 1200px) {
+
+    .h1,
+    h1 {
+        font-size: 3rem;
+    }
+
+    .copy-btn,
+    .gen-pass,
+    .pass-ref {
+        font-size: 24px;
+    }
+
+    .gen-pass {
+        padding: 12px 50px 12px 20px;
+    }
+}
